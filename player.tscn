@@ -217,7 +217,7 @@ texture_filter = 1
 position = Vector2(4.2500067, 43.46847)
 scale = Vector2(1.5585939, 1.8623741)
 sprite_frames = SubResource("SpriteFrames_efrwb")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708303]

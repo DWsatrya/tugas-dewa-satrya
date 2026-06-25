@@ -1,22 +1,20 @@
 extends Node
-   
-var live = 5   
+
+var score = 0
+var coins = 0
+var lives = 5
+
+func add_score() -> void:
+	score += 1
+	print("Total score: ", score)
+
+func add_coin() -> void:
+	coins += 1
+	print("Total coin: ", coins)
 
 func lose_life() -> void:
-	live -= 1
-	print("Health player: ", live)
-	# Setiap kena spike, live berkurang 1 lalu ditampilkan di output
-	
-	if live <= 0:
+	lives -= 1
+	print("Health player: ", lives)
+	if lives <= 0:
 		print("Anda mati!")
 		get_tree().reload_current_scene()
-		# Jika live sudah 0, tampilkan pesan mati lalu restart scene
-
-func add_life() -> void:
-	if live < 5:
-		live += 1
-		print("Health bertambah! Health sekarang: ", live)
-		# Jika live belum penuh, tambah 1 lalu tampilkan di output
-	else:
-		print("Health sudah penuh!")
-		# Jika sudah 5, tidak bisa bertambah lagi

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var health = $Health
 @export var KECEPATAN_JALAN: float = 200.0
 @export var TEKANAN: float = 400.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D

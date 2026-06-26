@@ -99,7 +99,7 @@ animations = [{
 size = Vector2(18, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
-size = Vector2(10.625001, 7.25)
+size = Vector2(11.250021, 7.5000153)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1426752337]
 scale = Vector2(2, 2)
@@ -112,15 +112,15 @@ sprite_frames = SubResource("SpriteFrames_jccr3")
 animation = &"gerak_musuh"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058515432]
-position = Vector2(0, 9)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_s7bn3")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1732794938]
 scale = Vector2(1.6, 1.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=33882299]
-position = Vector2(0.3124995, 5.4999986)
-scale = Vector2(0.99999976, 0.99999976)
+position = Vector2(2.2351735e-07, 5.312499)
+scale = Vector2(0.9999979, 0.9999979)
 shape = SubResource("RectangleShape2D_2hac7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

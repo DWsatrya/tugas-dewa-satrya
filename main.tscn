@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://l73rpimqp5o3" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d3r5fgi6ivydv" path="res://world.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://yddopnmv1ocj" path="res://spike.tscn" id="3_h2yge"]
 
 [node name="main" type="Node2D" unique_id=2056507302]
 
@@ -16,6 +15,3 @@ scale = Vector2(0.7142857, 0.7142857)
 
 [node name="world" parent="." unique_id=1855914314 instance=ExtResource("2_h2yge")]
 position = Vector2(-150, -475)
-
-[node name="spike" parent="." unique_id=1184307965 instance=ExtResource("3_h2yge")]
-position = Vector2(471, 691)

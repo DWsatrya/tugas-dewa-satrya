@@ -25,4 +25,4 @@ position = Vector2(19.999966, -151.42857)
 scale = Vector2(0.7142857, 0.7142857)
 
 [node name="world" parent="." unique_id=1855914314 instance=ExtResource("2_h2yge")]
-position = Vector2(-87, -480)
+position = Vector2(-150, -475)

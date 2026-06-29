@@ -1,22 +1,31 @@
 extends Node
 
-# Data global
-var coins: int = 0
-var lives: int = 3
+signal score_changed(value)
+signal coins_changed(value)
+signal lives_changed(value)
 
-# Signal agar UI bisa update otomatis
-signal coins_changed(new_coins)
-signal lives_changed(new_lives)
+var score := 0
+var coins := 0
+var lives := 5
 
-func add_coin() -> void:
+func add_score():
+	score += 1
+	score_changed.emit(score)
+
+func add_coin():
 	coins += 1
-	emit_signal("coins_changed", coins)
+	coins_changed.emit(coins)
 
-func lose_life() -> void:
+func lose_life():
 	lives -= 1
-	emit_signal("lives_changed", lives)
-	if lives <= 0:
-		game_over()
+	lives_changed.emit(lives)
 
-func game_over() -> void:
-	print("Game Over!")
+	if lives <= 0:
+		print("Anda mati!")
+
+		# Reset nyawa ke 5
+		lives = 5
+		lives_changed.emit(lives)
+
+		# Muat ulang scene
+		get_tree().reload_current_scene()

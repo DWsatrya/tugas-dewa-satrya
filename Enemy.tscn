@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpin15rijlxck"]
 
 [ext_resource type="Script" uid="uid://d2y3rkw2godnf" path="res://Enemy.gd" id="1_s7bn3"]
-[ext_resource type="Texture2D" uid="uid://cprylri7bnlbb" path="res://slime_green.png" id="2_2hac7"]
+[ext_resource type="Texture2D" uid="uid://x4jwessxmta0" path="res://slime_green.png" id="2_2hac7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6d4v"]
 atlas = ExtResource("2_2hac7")
@@ -99,7 +99,7 @@ animations = [{
 size = Vector2(18, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
-size = Vector2(10.625001, 7.25)
+size = Vector2(11.562504, 7.5000024)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1426752337]
 scale = Vector2(2, 2)
@@ -119,8 +119,8 @@ shape = SubResource("RectangleShape2D_s7bn3")
 scale = Vector2(1.6, 1.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=33882299]
-position = Vector2(0.3124995, 5.4999986)
-scale = Vector2(0.99999976, 0.99999976)
+position = Vector2(-0.15625058, 5.624999)
+scale = Vector2(0.99999946, 0.99999946)
 shape = SubResource("RectangleShape2D_2hac7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

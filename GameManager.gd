@@ -1,20 +1,31 @@
 extends Node
 
-var score = 0
-var coins = 0
-var lives = 5
+signal score_changed(value)
+signal coins_changed(value)
+signal lives_changed(value)
 
-func add_score() -> void:
+var score := 0
+var coins := 0
+var lives := 5
+
+func add_score():
 	score += 1
-	print("Total score: ", score)
+	score_changed.emit(score)
 
-func add_coin() -> void:
+func add_coin():
 	coins += 1
-	print("Total coin: ", coins)
+	coins_changed.emit(coins)
 
-func lose_life() -> void:
+func lose_life():
 	lives -= 1
-	print("Health player: ", lives)
+	lives_changed.emit(lives)
+
 	if lives <= 0:
 		print("Anda mati!")
+
+		# Reset nyawa ke 5
+		lives = 5
+		lives_changed.emit(lives)
+
+		# Muat ulang scene
 		get_tree().reload_current_scene()

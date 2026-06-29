@@ -11,13 +11,13 @@
 [node name="UI" parent="." unique_id=158285716 instance=ExtResource("1_lquwl")]
 
 [node name="coin" parent="." unique_id=1063945268 instance=ExtResource("2_7mycd")]
-position = Vector2(528.99994, 724)
+position = Vector2(366, 717)
 
 [node name="Enemy" parent="." unique_id=1426752337 instance=ExtResource("3_272bh")]
-position = Vector2(585, 704)
+position = Vector2(448, 705)
 
 [node name="player" parent="." unique_id=503546011 instance=ExtResource("2_0xm2m")]
-position = Vector2(157, 466.00006)
+position = Vector2(134, 440)
 scale = Vector2(1.4, 1.4)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=977968314]

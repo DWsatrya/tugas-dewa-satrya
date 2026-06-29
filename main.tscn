@@ -11,7 +11,7 @@
 [node name="UI" parent="." unique_id=158285716 instance=ExtResource("1_lquwl")]
 
 [node name="coin" parent="." unique_id=1063945268 instance=ExtResource("2_7mycd")]
-position = Vector2(528.99994, 724)
+position = Vector2(366, 717)
 
 [node name="Enemy" parent="." unique_id=1426752337 instance=ExtResource("3_272bh")]
 position = Vector2(1694, 644)

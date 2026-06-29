@@ -4,22 +4,17 @@ signal score_changed(value)
 signal coins_changed(value)
 signal lives_changed(value)
 
-const MAX_LIVES := 5
-
 var score := 0
 var coins := 0
-var lives := MAX_LIVES
-
+var lives := 5
 
 func add_score():
 	score += 1
 	score_changed.emit(score)
 
-
 func add_coin():
 	coins += 1
 	coins_changed.emit(coins)
-
 
 func lose_life():
 	lives -= 1
@@ -27,15 +22,10 @@ func lose_life():
 
 	if lives <= 0:
 		print("Anda mati!")
-		reset_game()
+
+		# Reset nyawa ke 5
+		lives = 5
+		lives_changed.emit(lives)
+
+		# Muat ulang scene
 		get_tree().reload_current_scene()
-
-
-func reset_game():
-	score = 0
-	coins = 0
-	lives = MAX_LIVES
-
-	score_changed.emit(score)
-	coins_changed.emit(coins)
-	lives_changed.emit(lives)

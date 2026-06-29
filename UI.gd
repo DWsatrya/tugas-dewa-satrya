@@ -9,5 +9,3 @@ func _ready() -> void:
 	
 	GameManager.lives_changed.connect(func(val): label_lives.text = "Nyawa: " + str(val))
 	GameManager.coins_changed.connect(func(val): label_coins.text = "Koin: " + str(val))
-	
-	

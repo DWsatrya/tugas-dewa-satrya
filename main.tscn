@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://c0d6qirk0ajwe"]
 
+[ext_resource type="PackedScene" uid="uid://b8ofg48wdrebt" path="res://UI.tscn" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://l73rpimqp5o3" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://3ojdjih438xf" path="res://coin.tscn" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d3r5fgi6ivydv" path="res://world.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://yddopnmv1ocj" path="res://spike.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cpin15rijlxck" path="res://Enemy.tscn" id="3_272bh"]
 
 [node name="main" type="Node2D" unique_id=2056507302]
+
+[node name="UI" parent="." unique_id=158285716 instance=ExtResource("1_lquwl")]
+
+[node name="coin" parent="." unique_id=1063945268 instance=ExtResource("2_7mycd")]
+position = Vector2(528.99994, 724)
+
+[node name="Enemy" parent="." unique_id=1426752337 instance=ExtResource("3_272bh")]
+position = Vector2(585, 704)
 
 [node name="player" parent="." unique_id=503546011 instance=ExtResource("2_0xm2m")]
 position = Vector2(157, 466.00006)
@@ -16,6 +26,3 @@ scale = Vector2(0.7142857, 0.7142857)
 
 [node name="world" parent="." unique_id=1855914314 instance=ExtResource("2_h2yge")]
 position = Vector2(-150, -475)
-
-[node name="spike" parent="." unique_id=1184307965 instance=ExtResource("3_h2yge")]
-position = Vector2(471, 691)

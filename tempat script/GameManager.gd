@@ -1,16 +1,14 @@
 extends Node
 
-signal score_changed(value)
 signal coins_changed(value)
 signal lives_changed(value)
 
-var score: int = 0
-var coins: int = 0
-var lives: int = 5
+const MAX_LIVES := 5
 
-func add_score():
-	score += 1
-	score_changed.emit(score)
+var coins: int = 0
+var lives: int = MAX_LIVES
+
+
 
 
 func add_coin():
@@ -23,14 +21,22 @@ func lose_life():
 	lives_changed.emit(lives)
 
 	if lives <= 0:
-		print("Anda mati!")
+		game_over()
 
-		# Reset nyawa
-		lives = 5
-		lives_changed.emit(lives)
 
-		# Reload scene dengan aman
-		call_deferred("_reload_scene")
+func game_over():
+	print("Anda mati!")
+
+	# Reset semua data
+	coins = 0
+	lives = MAX_LIVES
+
+	# Update UI
+	coins_changed.emit(coins)
+	lives_changed.emit(lives)
+
+	# Reload scene dengan aman
+	call_deferred("_reload_scene")
 
 
 func _reload_scene():

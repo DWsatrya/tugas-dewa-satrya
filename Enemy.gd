@@ -55,9 +55,6 @@ func turn() -> void:
 	# Balik sprite
 	scale.x *= -1
 
-	# Pindahkan RayCast ke depan musuh
-	ground_check.position.x *= -1
-
 	# Tunggu sebentar agar tidak bolak-balik terus
 	await get_tree().create_timer(0.2).timeout
 

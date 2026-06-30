@@ -1,54 +1,54 @@
 [gd_scene format=3 uid="uid://cpin15rijlxck"]
 
-[ext_resource type="Script" uid="uid://d2y3rkw2godnf" path="res://Enemy.gd" id="1_s7bn3"]
-[ext_resource type="Texture2D" uid="uid://x4jwessxmta0" path="res://slime_green.png" id="2_2hac7"]
+[ext_resource type="Script" uid="uid://d2y3rkw2godnf" path="res://Enemy.gd" id="1_y5nn5"]
+[ext_resource type="Texture2D" uid="uid://cprylri7bnlbb" path="res://slime_green.png" id="2_7svg0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6d4v"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp131"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6do27"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvmyp"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nxwx"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_52xpa"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jdgko"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4qr3"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73x2u"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2iwxp"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(24, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4v6dm"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(48, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2r3mv"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("2_7svg0")
 region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jccr3"]
@@ -96,14 +96,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
-size = Vector2(18, 12)
+size = Vector2(14, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
-size = Vector2(11.250021, 7.5000153)
+size = Vector2(9.375021, 6.2500105)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1426752337]
+[node name="Slime" type="CharacterBody2D" unique_id=1426752337]
 scale = Vector2(2, 2)
-script = ExtResource("1_s7bn3")
+script = ExtResource("1_y5nn5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1496857044]
 texture_filter = 1
@@ -112,19 +112,19 @@ sprite_frames = SubResource("SpriteFrames_jccr3")
 animation = &"gerak_musuh"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058515432]
-position = Vector2(0, 8.5)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_s7bn3")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1732794938]
 scale = Vector2(1.6, 1.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=33882299]
-position = Vector2(2.2351735e-07, 5.312499)
-scale = Vector2(0.9999979, 0.9999979)
+position = Vector2(3.725289e-08, 5.312497)
+scale = Vector2(0.9999976, 0.9999976)
 shape = SubResource("RectangleShape2D_2hac7")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1519188869]
-position = Vector2(14, 14.5)
-target_position = Vector2(0, 10)
+position = Vector2(9.5, 3.5)
+target_position = Vector2(0, 17.5)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

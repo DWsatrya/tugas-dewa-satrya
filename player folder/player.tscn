@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://l73rpimqp5o3"]
 
-[ext_resource type="Script" uid="uid://ciwled37rlwyb" path="res://tempat script/player.gd" id="1_hqtel"]
-[ext_resource type="Texture2D" uid="uid://dr1aj2xgpjykn" path="res://player sprite/male_hero_template-idle.png" id="1_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://csbbjdtokcksw" path="res://player sprite/male_hero_template-jump.png" id="2_hqtel"]
-[ext_resource type="Texture2D" uid="uid://c14eo1momv1n6" path="res://player sprite/male_hero_template-run.png" id="3_sweqy"]
-[ext_resource type="Script" uid="uid://b50n2alqrscyi" path="res://tempat script/Health.gd" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://ciwled37rlwyb" path="res://player folder/player.gd" id="1_hqtel"]
+[ext_resource type="Texture2D" uid="uid://dr1aj2xgpjykn" path="res://player folder/male_hero_template-idle.png" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://csbbjdtokcksw" path="res://player folder/male_hero_template-jump.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://c14eo1momv1n6" path="res://player folder/male_hero_template-run.png" id="3_sweqy"]
+[ext_resource type="Script" uid="uid://b50n2alqrscyi" path="res://player folder/Health.gd" id="5_sweqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
 atlas = ExtResource("1_i3pqv")

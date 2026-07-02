@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cprylri7bnlbb"
-path="res://.godot/imported/slime_green.png-b9c8831d71e9673dc8497f6ab73218b0.ctex"
+uid="uid://c14eo1momv1n6"
+path="res://.godot/imported/male_hero_template-run.png-68330838a7e504ee2f1e09ac2b1eb58f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slime_green.png"
-dest_files=["res://.godot/imported/slime_green.png-b9c8831d71e9673dc8497f6ab73218b0.ctex"]
+source_file="res://player folder/male_hero_template-run.png"
+dest_files=["res://.godot/imported/male_hero_template-run.png-68330838a7e504ee2f1e09ac2b1eb58f.ctex"]
 
 [params]
 

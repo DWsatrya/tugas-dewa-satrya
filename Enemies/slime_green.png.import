@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csbbjdtokcksw"
-path="res://.godot/imported/male_hero_template-jump.png-4f7808a874d303d34252a6baa0823817.ctex"
+uid="uid://cprylri7bnlbb"
+path="res://.godot/imported/slime_green.png-3306d8efcabd66cd8709c5bb42158c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player sprite/male_hero_template-jump.png"
-dest_files=["res://.godot/imported/male_hero_template-jump.png-4f7808a874d303d34252a6baa0823817.ctex"]
+source_file="res://Enemies/slime_green.png"
+dest_files=["res://.godot/imported/slime_green.png-3306d8efcabd66cd8709c5bb42158c9d.ctex"]
 
 [params]
 

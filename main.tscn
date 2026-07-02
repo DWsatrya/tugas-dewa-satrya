@@ -5,16 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://3ojdjih438xf" path="res://coin.tscn" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d3r5fgi6ivydv" path="res://world.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cpin15rijlxck" path="res://Enemy.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://bkb7tmmrojsfw" path="res://EnemySpawner.tscn" id="5_lquwl"]
 
 [node name="main" type="Node2D" unique_id=2056507302]
+
+[node name="EnemySpawner" parent="." unique_id=1336445089 instance=ExtResource("5_lquwl")]
+position = Vector2(784, 687)
 
 [node name="UI" parent="." unique_id=158285716 instance=ExtResource("1_lquwl")]
 
 [node name="coin" parent="." unique_id=1063945268 instance=ExtResource("2_7mycd")]
-position = Vector2(366, 717)
+position = Vector2(554, 717)
 
 [node name="Enemy" parent="." unique_id=1426752337 instance=ExtResource("3_272bh")]
-position = Vector2(448, 705)
+position = Vector2(477, 708)
 
 [node name="player" parent="." unique_id=503546011 instance=ExtResource("2_0xm2m")]
 position = Vector2(134, 440)

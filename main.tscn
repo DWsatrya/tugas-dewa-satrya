@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://l73rpimqp5o3" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://3ojdjih438xf" path="res://coin.tscn" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d3r5fgi6ivydv" path="res://world.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://c7wgrxf25gj21" path="res://EnemySpawner.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bkb7tmmrojsfw" path="res://EnemySpawner.tscn" id="5_lquwl"]
 
 [node name="main" type="Node2D" unique_id=2056507302]
 

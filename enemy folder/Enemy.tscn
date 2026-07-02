@@ -1,54 +1,123 @@
-[gd_scene format=3 uid="uid://cpin15rijlxck"]
+[gd_scene format=3 uid="uid://osd2kkk22ljb"]
 
-[ext_resource type="Script" uid="uid://d2y3rkw2godnf" path="res://Enemy.gd" id="1_s7bn3"]
-[ext_resource type="Texture2D" uid="uid://x4jwessxmta0" path="res://slime_green.png" id="2_2hac7"]
+[ext_resource type="Texture2D" path="res://Enemies/slime_green.png" id="1_hpuaj"]
+
+[sub_resource type="GDScript" id="GDScript_tt7e2"]
+script/source = "extends CharacterBody2D
+
+@export var kecepatan: float = 80.0
+
+var arah: float = 1.0
+var can_turn: bool = true
+
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ground_check: RayCast2D = $RayCast2D
+
+enum State {
+	PATROL,
+	TURN
+}
+
+var current_state = State.PATROL
+
+func _physics_process(delta: float) -> void:
+
+	match current_state:
+		State.PATROL:
+			patrol(delta)
+
+		State.TURN:
+			turn()
+
+
+func patrol(delta: float) -> void:
+
+	velocity.x = kecepatan * arah
+	velocity += get_gravity() * delta
+
+	move_and_slide()
+
+	anim.play(\"gerak_musuh\")
+
+	# Update RayCast agar hasilnya selalu terbaru
+	ground_check.force_raycast_update()
+
+	if can_turn:
+		if is_on_wall():
+			current_state = State.TURN
+
+		elif !ground_check.is_colliding():
+			current_state = State.TURN
+
+
+func turn() -> void:
+
+	can_turn = false
+
+	# Balik arah jalan
+	arah *= -1
+
+	# Balik sprite
+	scale.x *= -1
+
+	# Tunggu sebentar agar tidak bolak-balik terus
+	await get_tree().create_timer(0.2).timeout
+
+	can_turn = true
+	current_state = State.PATROL
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		body.terkena_musuh()
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6d4v"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp131"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6do27"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvmyp"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nxwx"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_52xpa"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jdgko"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4qr3"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73x2u"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2iwxp"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(24, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4v6dm"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(48, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2r3mv"]
-atlas = ExtResource("2_2hac7")
+atlas = ExtResource("1_hpuaj")
 region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jccr3"]
@@ -103,7 +172,7 @@ size = Vector2(11.250021, 7.5000153)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1426752337]
 scale = Vector2(2, 2)
-script = ExtResource("1_s7bn3")
+script = SubResource("GDScript_tt7e2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1496857044]
 texture_filter = 1

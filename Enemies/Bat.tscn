@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://d20xk6oi5hflb"]
+
+[ext_resource type="Script" uid="uid://d2y3rkw2godnf" path="res://enemy folder/Enemy.gd" id="1_r6jf1"]
+[ext_resource type="Texture2D" path="res://Enemy3-Fly.png" id="2_87x83"]
+
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87x83"]
+atlas = ExtResource("2_87x83")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2woo"]
+atlas = ExtResource("2_87x83")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2unj5"]
+atlas = ExtResource("2_87x83")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2epib"]
+atlas = ExtResource("2_87x83")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2utv"]
+atlas = ExtResource("2_87x83")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvrgs"]
+atlas = ExtResource("2_87x83")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tovuu"]
+atlas = ExtResource("2_87x83")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adp6t"]
+atlas = ExtResource("2_87x83")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ld74r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87x83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2woo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2unj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2epib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2utv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvrgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tovuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adp6t")
+}],
+"loop": true,
+"name": &"gerak_musuh",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(30, 58.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
+size = Vector2(24.375065, 36.87509)
+
+[node name="Slime" type="CharacterBody2D" unique_id=1426752337]
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_r6jf1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1496857044]
+texture_filter = 1
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_ld74r")
+animation = &"gerak_musuh"
+frame = 6
+frame_progress = 0.9660964
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058515432]
+position = Vector2(-0.5, -1.75)
+shape = SubResource("RectangleShape2D_s7bn3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1732794938]
+scale = Vector2(1.6, 1.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=33882299]
+position = Vector2(0.6250005, -0.9374986)
+scale = Vector2(0.99999714, 0.99999714)
+shape = SubResource("RectangleShape2D_2hac7")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1519188869]
+position = Vector2(23, -30.5)
+target_position = Vector2(0, 67.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
